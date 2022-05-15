@@ -8,6 +8,7 @@ const authRoute = require("./routes/auth");
 const productRoute = require("./routes/product");
 const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
+const stripeRoute = require("./routes/stripe");
 const cors = require("cors");
 
 dotenv.config();
@@ -24,6 +25,7 @@ app.use("/api/v1/users", userRoute);
 app.use("/api/v1/products", productRoute);
 app.use("/api/v1/carts", cartRoute);
 app.use("/api/v1/orders", orderRoute);
+app.use("/api/v1/checkout", stripeRoute);
 
 app.listen(port, () => {
   console.log(`App listening on http://localhost:${port}`);

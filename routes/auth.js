@@ -1,10 +1,7 @@
 const router = require("express").Router();
 const User = require("../models/User");
 const CryptoJS = require("crypto-js");
-const dotenv = require("dotenv");
 const jwt = require("jsonwebtoken");
-
-dotenv.config();
 
 // REGISTER
 
@@ -29,7 +26,6 @@ router.use("/register", async (req, res) => {
 // LOGIN
 
 router.use("/login", async (req, res) => {
-  res.set("Content-Type", "aplication/json");
   try {
     const user = await User.findOne({ username: req.body.username });
 
