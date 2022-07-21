@@ -2,13 +2,14 @@ const mongoose = require("mongoose");
 
 const ProductSchema = new mongoose.Schema(
   {
-    title: { type: String, required: true, unique: true },
+    title: { type: String, required: true },
     desc: { type: String, required: true },
     img: { type: String, required: true },
     categories: { type: Array },
     size: { type: Array },
+    inStock: { type: Boolean },
     price: { type: Number, required: true },
-    inStock: { type: Boolean, default: true },
+    weight: { type: Number, required: true },
   },
   { timestamps: true }
 );
