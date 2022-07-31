@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const dateNow = new Date();
 
 const ProductSchema = new mongoose.Schema(
   {
@@ -17,10 +18,13 @@ const ProductSchema = new mongoose.Schema(
           default: "mang maman",
         },
         numberPhone: {
-          type: Number,
+          type: String,
+        },
+        createdAt: {
+          type: String,
+          default: dateNow,
         },
       },
-      { timestamps: true },
     ],
     price: { type: Number, required: true },
     weight: { type: Number, required: true },
